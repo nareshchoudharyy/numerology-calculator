@@ -24,7 +24,7 @@ function Header() {
         <header className='flex justify-between items-center bg-black bg-opacity-40 backdrop-blur-sm  text-[#E0FFFF] p-3 fixed top-0 left-0 w-full z-10'>
             <Link href={'/'}>
                 <div className='flex items-center gap-2'>
-                    <Image src={logo.src} alt="Logo" className=' w-6 h-6 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14' />
+                    <img src={logo.src} alt="Logo" className=' w-6 h-6 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14' />
                     <div className={`${robotaCondensed.className} lora-font text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}>Numerology Calculator</div>
                 </div>
             </Link>

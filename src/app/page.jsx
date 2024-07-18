@@ -30,7 +30,7 @@ function Page() {
       <div className='bg-fixed inset-0 bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg.src})` }}>
         <div className='pt-[150px] inset-0 bg-black bg-opacity-20 overflow-auto flex flex-col justify-between'>
           <Header />
-          <div className='w-[95%] min-h-screen p-2 md:px-10 lg:px-14 md:w-[85%] sm:py-6 md:py-12 mx-auto  bg-white bg-opacity-20 backdrop-blur-md rounded text-white'>
+          <div className='w-[95%] p-2 md:px-10 lg:px-14 md:w-[85%] sm:py-6 md:py-12 mx-auto  bg-white bg-opacity-20 backdrop-blur-md rounded text-white'>
             <h1 className='text-center font-extrabold text-[25px] sm:text-xl md:text-2xl lg:text-4xl'>
               Indian numerology calculator: Discover Name Vibrations
             </h1>

@@ -4,6 +4,7 @@ import bg from "@/app/images/4.jpeg"
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 const zodiacSigns = [
     {
         sign: "Aries",
@@ -276,6 +277,13 @@ function Page() {
                                         </div>
                                     </div>
                                 </div>
+                                    <div className='text-center'>
+                                        <Link
+                                            href={'/'}
+                                            className='w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600'>
+                                            Calculate Again
+                                        </Link>
+                                    </div>
                             </>
                     }
                 </div>
