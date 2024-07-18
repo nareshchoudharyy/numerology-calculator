@@ -137,7 +137,6 @@ const getZodiacSign = (dob) => {
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
     const formattedDate = `${month}-${day}`;
-
     return zodiacSigns.find(sign =>
         (formattedDate >= sign.start && formattedDate <= sign.end)
     );
@@ -152,19 +151,16 @@ function capitalizeWordsRegex(str) {
 function Page() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const name = searchParams.get('name');
-    const dob = searchParams.get('dob');
-
+    let name = searchParams.get('name');
+    let dob = searchParams.get('dob');
     const [result, setResult] = useState(null);
     const [falseDetails, setFalseDetails] = useState(false);
     const [homePageCounter, setHomePageCounter] = useState(5);
-
     useEffect(() => {
         if (!name || !dob) {
             setFalseDetails(true);
         }
     }, [name, dob]);
-
     useEffect(() => {
         if (falseDetails) {
             const intervalId = setInterval(() => {
@@ -180,14 +176,12 @@ function Page() {
             return () => clearInterval(intervalId);
         }
     }, [falseDetails, router]);
-
     useEffect(() => {
         if (name && dob) {
             const luckyNumber = calculateLuckyNumber(name);
             const zodiac = getZodiacSign(dob);
             const capitalizedName = capitalizeWordsRegex(name);
             const famousPersonalities = getFamousPersonalities(zodiac.sign);
-
             setResult({
                 name: capitalizedName,
                 dob,
@@ -197,7 +191,6 @@ function Page() {
             });
         }
     }, [name, dob]);
-
     if (falseDetails) {
         return (
             <div className='bg-fixed inset-0 bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg.src})` }}>
@@ -211,7 +204,6 @@ function Page() {
             </div>
         );
     }
-
     return (
         <div className='min-h-screen bg-fixed inset-0 bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg.src})` }}>
             <div className='w-full min-h-screen inset-0 bg-black bg-opacity-20 overflow-auto flex flex-col justify-between'>
@@ -277,13 +269,13 @@ function Page() {
                                         </div>
                                     </div>
                                 </div>
-                                    <div className='text-center'>
-                                        <Link
-                                            href={'/'}
-                                            className='w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600'>
+                                <div className='text-center'>
+                                    <Link href={'/'}>
+                                        <button className='w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600' onClick={() => { name = undefined; dob = undefined; }}>
                                             Calculate Again
-                                        </Link>
-                                    </div>
+                                        </button>
+                                    </Link>
+                                </div>
                             </>
                     }
                 </div>
@@ -292,5 +284,4 @@ function Page() {
         </div>
     );
 }
-
 export default Page;

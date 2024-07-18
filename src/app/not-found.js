@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Header from '@/app/components/Header';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-
 function Page() {
     const router = useRouter();
     const [homePageCounter, setHomePageCounter] = useState(5);
@@ -32,5 +31,4 @@ function Page() {
         </>
     );
 }
-
 export default Page;

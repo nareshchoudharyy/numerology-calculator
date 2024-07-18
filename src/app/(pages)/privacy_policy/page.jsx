@@ -1,10 +1,8 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import bg from "@/app/images/4.jpeg"
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-
-
 function Page() {
     return (
         <>
@@ -82,5 +80,4 @@ function Page() {
         </>
     );
 }
-
 export default Page;

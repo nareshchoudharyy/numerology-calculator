@@ -10,16 +10,12 @@ import { MdOutlineContactMail } from "react-icons/md";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 import { Roboto_Condensed } from "next/font/google"
 import Image from 'next/image';
-
 const robotaCondensed = Roboto_Condensed({
     weight: ["400", "600", "700"],
     subsets: ["latin"]
 })
-
-
 function Header() {
     const [menuStatus, setMenuStatus] = useState(false);
-
     return (
         <header className='flex justify-between items-center bg-black bg-opacity-40 backdrop-blur-sm  text-[#E0FFFF] p-3 fixed top-0 left-0 w-full z-10'>
             <Link href={'/'}>
@@ -35,7 +31,7 @@ function Header() {
             </div>
             {/* side menu  */}
             <div className={`absolute top-0 right-0 min-h-screen md:flex z-10 transform transition duration-500 ${menuStatus ? ' translate-x-[0px]' : 'translate-x-[100%]'}`}>
-                <div id="" className="min-h-screen w-[100vw] sm:w-64 px-0 flex flex-col justify-between bg-gray-800 text-gray-100">
+                <div id="" className="min-h-screen w-[60vw] sm:w-64 px-0 flex flex-col justify-between bg-gray-800 text-gray-100">
                     <div className="flex flex-col space-y-6 p-3">
                         <div className=" text-white flex items-center justify-between text-2xl md:text-xl l:text-md font-extrabold ">
                             <div className='text-md ms-4'>
@@ -66,14 +62,10 @@ function Header() {
                             </Link>
                         </nav>
                     </div>
-                    <div className='text-center text-[12px]'>
-                        WeCraftSoluton.com
-                    </div>
                 </div>
             </div>
-            <div className={`fixed top-0 left-0 bg-black bg-opacity-70 w-[100vw] h-[100vh] z-3 ${menuStatus?"block":"hidden"}`} onClick={()=>{setMenuStatus(!menuStatus)}}></div>
+            <div className={`fixed top-0 left-0 bg-black bg-opacity-70 w-[100vw] h-[100vh] z-3 ${menuStatus ? "block" : "hidden"}`} onClick={() => { setMenuStatus(!menuStatus) }}></div>
         </header>
     );
 }
-
 export default Header;

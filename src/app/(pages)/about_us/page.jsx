@@ -1,17 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import bg from "@/app/images/4.jpeg"
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import { useForm, ValidationError } from '@formspree/react';
-
-
 function Page() {
-  const [state, handleSubmit] = useForm("xjkbklol");
-  const [data, setData] = useState({});
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
   return (
     <>
       <div className='min-h-screen bg-fixed inset-0 bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg.src})` }}>
@@ -26,7 +18,7 @@ function Page() {
                 Welcome to wecraftsolution! we are passionate entrepreneurs dedicated to providing unique insights through our powerful numerology calculator. At wecraftsolution, We offer personalized recommendations in health, career, relationships, and famous personalities based on your date of birth and name.
               </div>
               <div>
-                Driven by a commitment to help others navigate their life paths, my goal is to empower you with valuable information that can positively influence your decisions and growth. Whether you're seeking guidance for your career or looking to understand your relationships better, you're in the right place.
+                Driven by a commitment to help others navigate their life paths, our goal is to empower people with valuable information that can positively influence their decisions and growth. Whether they're seeking guidance for their career or looking to understand their relationships better, they're in the right place.
               </div>
               <div>
                 Thank you for being part of this journey!
@@ -39,5 +31,4 @@ function Page() {
     </>
   );
 }
-
 export default Page;

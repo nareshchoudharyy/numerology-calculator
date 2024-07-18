@@ -6,10 +6,9 @@ import bg from "@/app/images/4.jpeg"
 import Faq from './components/Faq'
 import { useRouter } from 'next/navigation'
 function Page() {
-  const router =  useRouter();
+  const router = useRouter();
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
@@ -79,5 +78,4 @@ function Page() {
     </>
   );
 }
-
 export default Page;
